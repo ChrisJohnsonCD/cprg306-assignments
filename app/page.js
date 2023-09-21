@@ -1,4 +1,4 @@
-import Link from "./weeklink/week2";
+import Link from "./week2/shoplist";
 import StudentInfo from "./StudentInfo";
 
 export default function Home() {
