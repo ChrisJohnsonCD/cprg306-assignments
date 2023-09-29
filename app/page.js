@@ -1,5 +1,7 @@
-import Link from "./week2/shoplist";
+import Link from "next/link";
 import StudentInfo from "./StudentInfo";
+
+
 
 export default function Home() {
   return (
@@ -7,8 +9,10 @@ export default function Home() {
       <h1>CPRG 306: Web Development 2 - Assignments</h1>
       <StudentInfo />
 
-      <Link href="week2">Week2 link</Link> 
-
+      <Link href="week3">My Shopping List</Link> 
+      
+        
+     
 
     </main>
   )
