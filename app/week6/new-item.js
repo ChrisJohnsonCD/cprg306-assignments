@@ -1,11 +1,8 @@
-
+"use client";
 import React, { useState } from 'react';
 
-"use client";
 
-import{ useState } from "react";
-
-export default function NewItem () {
+export default function NewItem ({ onAddItem}) {
     
     const[name, setName] = useState("Enter Name");
     const[quantity, setQuantity] = useState(1);

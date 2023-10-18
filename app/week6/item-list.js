@@ -3,13 +3,13 @@ import React,{useState} from 'react';
 
 import Item from './item';
 
-export default function ItemList({ item }) {
+export default function ItemList({ items }) {
    
     const [sortBy, setSortBy] = useState("name");
     const [grouped, setGrouped] = useState(false);
 
     const sortItems = () => {
-      const sortedItems = [...item];
+      const sortedItems = [...items];
        
               if(sortBy === "name") {
                  sortedItems.sort((a, b) => a.name.localeCompare(b.name));
@@ -30,7 +30,7 @@ export default function ItemList({ item }) {
     };
 
     function groupByCategory ()  {
-      const groupedItems = item.reduce ((acc, item) => {
+      const groupedItems = items.reduce ((acc, item) => {
         const category = item.category.toLowerCase();
         if(!acc[category]) {
           acc[category] = [];
