@@ -1,7 +1,6 @@
 import Link from "next/link";
 import StudentInfo from "./StudentInfo";
-import NewItem from "./week4/new-item";
-//import React, {useState} from 'react';
+
 
 
 export default function Home() {
@@ -16,10 +15,13 @@ export default function Home() {
           </li>
           <li>
             <Link href="week4">New item</Link> 
-                    <NewItem />
+                   
           </li>
           <li>
           <Link href="week5">Week5</Link>
+          </li>
+          <li>
+          <Link href="week6">Week6</Link>
           </li>
         </ul>
 
