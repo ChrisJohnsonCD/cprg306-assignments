@@ -7,17 +7,29 @@ import NewItem from "./week4/new-item";
 export default function Home() {
   return (
     <main> 
-      <h1>CPRG 306: Web Development 2 - Assignments</h1>
-      <StudentInfo />
-      
-
-      <Link href="week3">My Shopping List</Link> 
-
       <div>
-      <Link href="page">New item</Link> 
-        <NewItem />
+        <h1>CPRG 306: Web Development 2 - Assignments</h1>
+        <StudentInfo />
+        <ul>
+          <li>
+            <Link href="week3">My Shopping List</Link> 
+          </li>
+          <li>
+            <Link href="week4">New item</Link> 
+                    <NewItem />
+          </li>
+          <li>
+          <Link href="week5">Week5</Link>
+          </li>
+        </ul>
+
        </div>
 
     </main>
   )
 }
+
+
+      
+      
+      
