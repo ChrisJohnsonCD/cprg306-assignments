@@ -1,4 +1,5 @@
 import React from 'react';
+import MealIdeas from './meal-ideas';
 
 export default function Item ({ name, quantity, category, onSelect }) 
 {
@@ -13,9 +14,16 @@ export default function Item ({ name, quantity, category, onSelect })
     {
         onSelect(itemDetails);
     };
-    
+
     return (
-        <li className="border border-sky-500 bg-sky-800 w-full max-w-xs m-4 p-2" onClick={() => onSelect (name, quantity, category)}>
+        <li className="max-w-md mx-auto mt-6 p-4 hover:bg-orange-700 rounded shadow-lg ml-1 bg-dark bg-gray-900 text-white" 
+        onClick={handleItemClick}    
+        style={{ cursor: 'pointer', transition: 'background-color 0.3s' }}
+        //add hover style
+        // style={{ transition: 'background-color 0.3s', cursor: 'pointer'}}
+        // Define hover style
+        
+            >
             <h3 className="text-x1 font-bold">{name}</h3>
             <p className="text-x1 font-bold"> {quantity}</p>
             <p className="text-x1 font-bold"> {category}</p>
