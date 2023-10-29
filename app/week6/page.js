@@ -26,4 +26,4 @@ export default function Page()
       <ItemList items = {items}/>
       </main>
     );
-  }
+  }`s`
