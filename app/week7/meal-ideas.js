@@ -78,10 +78,13 @@ export default function MealIdeas({ingredient})
         const [meals, setMeals] = useState([]);
         const [selectedMeal,setSelectedMeal] = useState(null);
         
-
+      //   useEffect(()=>{
+      //     let meals = fetchMealDetails("bread");
+      //     console.log(meals)}
+      // ,[]);
         const getMealIdeasImages = async () => {
           try {
-            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${ingredient}`);
+            const response = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${ingredient}`);
             if (!response.ok) {
               console.log(response.status);
             }
@@ -111,7 +114,7 @@ export default function MealIdeas({ingredient})
                 {meals.slice(0, 12).map((meal) => (
                   <div key={meal.idMeal} 
                   style={{ width: '120px', margin: '8px', cursor: 'pointer' }}
-                  onClick={() => setSelectedMeal(meal.idMeal)}>
+                  onClick={() => setSelectedMeal(meal)}>
                     <img src={meal.strMealThumb} alt={meal.strMeal} style={{ maxWidth: '100%' }} />
                     <p>{meal.strMeal}</p>
                   </div>
@@ -131,6 +134,7 @@ export default function MealIdeas({ingredient})
           <ul>
             {Array.from({ length: 20 }, (_, i) => i + 1).map((i) => {
               const ingredient = selectedMeal[`strIngredient${i}`];
+              console.log(selectedMeal)
               const measure = selectedMeal[`strMeasure${i}`];
               if (ingredient && measure) {
                 return (
