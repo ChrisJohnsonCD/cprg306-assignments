@@ -87,7 +87,7 @@ export default function ItemList({ items, onItemSelect, getMealIdeas, }) { // Ad
                   <h2 className="text-xl font-bold capitalize">{category}</h2>
                   <ul>
                     {sortedItemsByCategory[index].map((item) => (
-                      <Item
+                      (<Item
                         key={item.id} 
                         name={item.name}
                         quantity={item.quantity}
@@ -97,7 +97,7 @@ export default function ItemList({ items, onItemSelect, getMealIdeas, }) { // Ad
                           getMealIdeas(item.name); // Call getMealIdeas when an item is selected
                         }}
                         //  getMealIdeas= {getMealIdeas}
-                      />
+                      />)
                     ))}
                   </ul>
                 </li>
@@ -110,8 +110,10 @@ export default function ItemList({ items, onItemSelect, getMealIdeas, }) { // Ad
                 quantity={item.quantity}
                 category={item.category}
                 onSelect= {() => {
-                  onItemSelect(item);
-                  getMealIdeas(item.name); // Call getMealIdeas when an item is selected
+                  // let item_name = item.name.split(" ");
+                  // console.log(item_name[0])
+                  onItemSelect(item.name);
+                  // getMealIdeas(item.name); // Call getMealIdeas when an item is selected
                 }}
                 //  getMealIdeas= {getMealIdeas}
                 />
