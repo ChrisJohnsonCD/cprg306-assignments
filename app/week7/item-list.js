@@ -4,8 +4,8 @@ import React,{useState} from 'react';
 import Item from './item';
 
 
-
-export default function ItemList({ items, onItemSelect, getMealIdeas, }) { // Add getMealIdeas as a prop
+// Add getMealIdeas as a prop
+export default function ItemList({ items, onItemSelect, getMealIdeas, }) { 
     const [sortBy, setSortBy] = useState("name");
     const [grouped, setGrouped] = useState(false);
 
@@ -96,7 +96,7 @@ export default function ItemList({ items, onItemSelect, getMealIdeas, }) { // Ad
                           onItemSelect(item);
                           getMealIdeas(item.name); // Call getMealIdeas when an item is selected
                         }}
-                        //  getMealIdeas= {getMealIdeas}
+                        
                       />)
                     ))}
                   </ul>
@@ -110,12 +110,11 @@ export default function ItemList({ items, onItemSelect, getMealIdeas, }) { // Ad
                 quantity={item.quantity}
                 category={item.category}
                 onSelect= {() => {
-                  // let item_name = item.name.split(" ");
-                  // console.log(item_name[0])
+                  
                   onItemSelect(item.name);
-                  // getMealIdeas(item.name); // Call getMealIdeas when an item is selected
+                  
                 }}
-                //  getMealIdeas= {getMealIdeas}
+                
                 />
                 
             ))}

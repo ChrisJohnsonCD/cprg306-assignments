@@ -42,11 +42,12 @@ export default function NewItem ({ onAddItem, setIngredient, getMealIdeas }) {
         }
     }
 
-    const handleItemSelect = (item) => {
-    setSelectedItem(item);
-    setIngredient(item.name);
-    getMealIdeas(item.name);
-  };
+    const handlerItemSelect = (item) => {
+      
+        const itemName = item.name;
+        setSelectedItem(itemName);
+      };
+        
 
     return (
         <div className="max-w-md mx-auto mt-6 p-4 border rounded shadow-lg ml-1 bg-dark bg-gray-800">
