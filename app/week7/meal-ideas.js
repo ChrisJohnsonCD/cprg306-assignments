@@ -2,60 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 
-// async function getMealIdeas() {
-      
-//   try {
-//     const response = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php`);
-//     if (!response.ok)
-//     {
-//       console.log(response.status);
-//     }
-//     const data = await response.json();
-//     console.log(data);
-//     return data;
-//   } catch (error) 
-//   {
-//     console.log(error.message);
-//     }
-   
-   
-//   }
 
-//   export default function MealIdeas()
-//   {
-//     const[mealIdeasDisplay, setMealIdeasDisplay] = useState(null);
-
-//     async function getMealByName(mealName){
-//       try
-//       {
-//         const response = await fetch (`https://www.themealdb.com/api/json/v1/1/filter/${mealName}`);
-//         if (!response.ok)
-//         {
-//           console.log(response.status);
-//         }
-//         const data = await response.json();
-//         console.log(data)
-//         setMealIdeasDisplay (data);
-//       } catch (error)
-//       {
-//         console.log(error.message);
-//       }
-//     }
-
-//     useEffect(() => 
-//     {
-//       getMealIdeas();
-//       getMealByName();
-//     }, []);
-
-//     return (
-//       <section>
-//         <div>
-
-//         </div>
-//       </section>
-//     );
-//   }
 
 async function fetchMealDetails(mealId) {
     try {
