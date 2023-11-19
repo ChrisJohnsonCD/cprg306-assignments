@@ -1,10 +1,11 @@
 "use client";
 import React, { useState } from 'react';
 import { dbAddItem } from '../_services/shopping-list-service';
+import { useUserAuth } from '../_utils/auth-context';
 
 
 export default function NewItem ({ onAddItem, setIngredient, getMealIdeas }) {
-    
+    const {user} = useUserAuth();
     const[name, setName] = useState("Item Name");
     const[quantity, setQuantity] = useState(1);
     const[category, setCategory] = useState("produce");
@@ -29,7 +30,11 @@ export default function NewItem ({ onAddItem, setIngredient, getMealIdeas }) {
             quantity: quantity,
             category: category,
           };
-        dbAddItem(newItem);  
+          if(user){
+            dbAddItem(user.uid, newItem); 
+          }
+          onAddItem(newItem);
+         
         setName("Item Name");
         setQuantity(1)
         setCategory("produce");
