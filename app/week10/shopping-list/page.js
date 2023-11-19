@@ -19,7 +19,7 @@ export default function Page (){
  // Event handler to add new items to the items state
  const handlerAddItem = (newItem) => 
  {
-   setItems((prevItems) => [...prevItems, newItem]);
+  setItemList((prevItems) => [...prevItems, newItem]);
  };
 
  //Create a new event handler for item selection for ingredients
@@ -66,6 +66,21 @@ export default function Page (){
      }, [user]);
      
  
+     return(
+         <main className = "flex">
+       <div className = "w-1/2 p-4">
+         <h1 className="text-2xl font-bold mb-4">Shopping List</h1>
+         <NewItem onAddItem ={handlerAddItem} />
+         <ItemList items = {itemList} onItemSelect={handlerItemSelect} getMealIdeas={fetchMealIdeas} />
+       </div>
+       <div className ="w-1/2 p-4">
+         <h1 className = "text-2x1 font-bold mb -4">Meal Ideas</h1>
+         <MealIdeas ingredient={cleanedItemName} fetchedMealIdeas={fetchedMealIdeas} />
+       </div>
+       
+       
+       </main>
+     );
 
 
 
@@ -78,29 +93,9 @@ export default function Page (){
 
 
 
-    // let itemObj = {
-    //     name: 'apples',
-    //     category: 'produce',
-    //     quantity: 3
-
-    // }
     
     
-    return(
-        <main className = "flex">
-      <div className = "w-1/2 p-4">
-        <h1 className="text-2xl font-bold mb-4">Shopping List</h1>
-        <NewItem onAddItem ={handlerAddItem} />
-        <ItemList items = {db} onItemSelect={handlerItemSelect} getMealIdeas={fetchMealIdeas} />
-      </div>
-      <div className ="w-1/2 p-4">
-        <h1 className = "text-2x1 font-bold mb -4">Meal Ideas</h1>
-        <MealIdeas ingredient={cleanedItemName} fetchedMealIdeas={fetchedMealIdeas} />
-      </div>
-      
-      
-      </main>
-    );
+    
 
 
 
